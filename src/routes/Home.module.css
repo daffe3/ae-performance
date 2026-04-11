@@ -1,0 +1,257 @@
+/* ── Hero ─────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,10,10,0.95) 0%,
+    rgba(10,10,10,0.55) 50%,
+    rgba(10,10,10,0.2) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 72px;
+  max-width: 680px;
+}
+
+.heroPre {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.heroTitle em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.heroSub {
+  font-size: 16px;
+  color: rgba(245,243,238,0.7);
+  max-width: 440px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--gold);
+  color: var(--black);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.btnPrimary:hover {
+  opacity: 0.88;
+}
+
+.btnGhost {
+  display: inline-block;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btnGhost:hover {
+  border-color: rgba(255,255,255,0.6);
+  color: var(--white);
+}
+
+/* ── Trust bar ────────────────────────────────────────────── */
+
+.trustBar {
+  background: var(--coal);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  font-size: 13px;
+  color: rgba(245,243,238,0.6);
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+
+.trustItem:last-child {
+  border-right: none;
+}
+
+.trustCheck {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  color: var(--gold);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Tjänster ─────────────────────────────────────────────── */
+
+.servicesSection {
+  padding: 96px 0;
+}
+
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 48px;
+  max-width: 500px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.card {
+  display: block;
+  background: var(--black);
+  padding: 36px 32px;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.card:hover {
+  background: var(--coal);
+}
+
+.card:hover .cardArrow {
+  transform: translateX(6px);
+  color: var(--gold);
+}
+
+.cardIcon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.cardArrow {
+  font-size: 18px;
+  color: rgba(255,255,255,0.3);
+  transition: transform 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+/* ── CTA-sektion ──────────────────────────────────────────── */
+
+.ctaSection {
+  background: var(--coal);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 96px 0;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.ctaSub {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+  .trustBar { flex-direction: column; align-items: flex-start; padding: 0 20px; }
+  .trustItem { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); width: 100%; }
+  .heroContent { padding-bottom: 48px; }
+}
