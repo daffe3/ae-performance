@@ -1,0 +1,266 @@
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroBg {
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.96) 0%,
+    rgba(10, 10, 10, 0.45) 55%,
+    rgba(10, 10, 10, 0.1) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 80px;
+  max-width: 700px;
+}
+
+.heroPre {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 8vw, 88px);
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.heroTitle em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.heroSub {
+  font-size: 17px;
+  color: rgba(245, 243, 238, 0.75);
+  max-width: 460px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 14px 30px;
+  background: var(--gold);
+  color: #0f0f0f;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+.btnPrimary:hover { opacity: 0.85; }
+
+.btnGhost {
+  display: inline-block;
+  padding: 14px 30px;
+  background: transparent;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btnGhost:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255,255,255,0.05);
+}
+
+/* TRUST BAR */
+.trustBar {
+  background: var(--coal);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 17px 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(245, 243, 238, 0.65);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+.trustItem:last-child { border-right: none; }
+
+.check {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  color: var(--gold);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* TJÄNSTER */
+.servicesSection {
+  padding: 96px 0 0;
+}
+
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  background: var(--black);
+}
+
+.serviceCard {
+  position: relative;
+  display: block;
+  height: 380px;
+  overflow: hidden;
+}
+
+.serviceImg {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+.serviceCard:hover .serviceImg {
+  transform: scale(1.05);
+}
+
+.serviceOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.92) 0%,
+    rgba(10, 10, 10, 0.4) 50%,
+    rgba(10, 10, 10, 0.15) 100%
+  );
+  transition: background 0.3s;
+}
+.serviceCard:hover .serviceOverlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.96) 0%,
+    rgba(10, 10, 10, 0.55) 55%,
+    rgba(10, 10, 10, 0.2) 100%
+  );
+}
+
+.serviceText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  z-index: 1;
+}
+
+.serviceTitle {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.serviceDesc {
+  font-size: 14px;
+  color: rgba(245, 243, 238, 0.75);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 380px;
+}
+
+.serviceArrow {
+  font-size: 20px;
+  color: var(--gold);
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.serviceCard:hover .serviceArrow {
+  transform: translateX(6px);
+}
+
+/* CTA */
+.ctaSection {
+  padding: 100px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin-top: 3px;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.ctaSub {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+@media (max-width: 700px) {
+  .serviceGrid { grid-template-columns: 1fr; }
+  .serviceCard { height: 300px; }
+  .trustBar { flex-direction: column; padding: 0 20px; }
+  .trustItem { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); width: 100%; }
+  .heroContent { padding-bottom: 52px; }
+}

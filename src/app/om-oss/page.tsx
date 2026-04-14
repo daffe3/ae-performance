@@ -1,11 +1,16 @@
-// OmOss.jsx — Om oss (route: "/om-oss")
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import styles from './page.module.css'
 
-import styles from './OmOss.module.css'
+export const metadata: Metadata = {
+  title: 'Om oss',
+  description: 'A&E Performance AB grundades 2017 i Falun. Lokalt förankrat bolag med bred kompetens inom mark och anläggning.',
+}
 
-export default function OmOss() {
+export default function OmOssPage() {
   return (
     <>
-      <section className={styles.pageHeader}>
+      <section className={styles.header}>
         <div className="container">
           <p className={styles.label}>Vilka vi är</p>
           <h1 className={styles.title}>Om A&E Performance</h1>
@@ -23,12 +28,12 @@ export default function OmOss() {
             </p>
             <p>
               Vår styrka är kombinationen av bred kompetens och lokal närvaro. Oavsett
-              om det gäller ett schaktningsjobb i trädgården, maskintjänster för ett
-              större anläggningsprojekt eller löpande fastighetsskötsel — vi vet hur man
+              om det gäller ett schaktningsjobb, maskintjänster för ett
+              anläggningsprojekt eller löpande fastighetsskötsel — vi vet hur man
               gör jobbet ordentligt.
             </p>
             <p>
-              Vi är F-skattsedelsregistrerade och momsregistrerade. Det betyder att du
+              Vi är F-skattsedelsregistrerade och momsregistrerade. Det innebär att du
               som privatperson kan nyttja ROT-avdrag för kvalificerade arbeten.
             </p>
 
@@ -48,7 +53,7 @@ export default function OmOss() {
             </div>
           </div>
 
-          <div className={styles.side}>
+          <aside>
             <div className={styles.infoCard}>
               <h3 className={styles.cardTitle}>Företagsinformation</h3>
               <dl className={styles.dl}>
@@ -66,7 +71,18 @@ export default function OmOss() {
                 <dd>Moms, F-skatt, Arbetsgivaravgift</dd>
               </dl>
             </div>
-          </div>
+
+            <div className={styles.nightImg}>
+              <Image
+                src="/projekt-natt.jpg"
+                alt="Maskinist framför grävmaskin på natten"
+                fill
+                sizes="340px"
+                className={styles.nightPhoto}
+              />
+              <div className={styles.nightOverlay} />
+            </div>
+          </aside>
         </div>
       </section>
     </>

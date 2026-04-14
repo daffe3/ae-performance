@@ -1,8 +1,20 @@
+# Beroenden
 node_modules/
+
+# Next.js byggoutput
+.next/
+out/
 dist/
+
+# Miljövariabler — lägg aldrig upp API-nycklar på GitHub
 .env
 .env.local
 .env.*.local
-.vite/
+
+# OS-filer
 .DS_Store
 Thumbs.db
+
+# Editor
+.vscode/
+.idea/
