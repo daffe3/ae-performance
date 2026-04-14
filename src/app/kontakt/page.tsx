@@ -1,15 +1,12 @@
-// src/app/kontakt/page.tsx
-// Sidan i sig är en Server Component (metadata etc)
-// men formuläret är en separat Client Component
-
-import type { Metadata } from 'next'
-import KontaktForm from './KontaktForm'
-import styles from './page.module.css'
+import type { Metadata } from "next";
+import KontaktForm from "./KontaktForm";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: 'Kontakt',
-  description: 'Kontakta A&E Performance AB i Falun för offert på markarbeten, maskintjänster eller fastighetsskötsel.',
-}
+  title: "Kontakt",
+  description:
+    "Kontakta A&E Performance AB i Falun för offert på markarbeten, maskintjänster eller fastighetsskötsel.",
+};
 
 export default function KontaktPage() {
   return (
@@ -31,7 +28,11 @@ export default function KontaktPage() {
           <aside className={styles.info}>
             <div className={styles.infoBlock}>
               <p className={styles.infoLabel}>Adress</p>
-              <p>Stora Källviken 10<br />791 93 Falun</p>
+              <p>
+                Stora Källviken 10
+                <br />
+                791 93 Falun
+              </p>
             </div>
             <div className={styles.infoBlock}>
               <p className={styles.infoLabel}>Instagram</p>
@@ -56,5 +57,5 @@ export default function KontaktPage() {
         </div>
       </section>
     </>
-  )
+  );
 }

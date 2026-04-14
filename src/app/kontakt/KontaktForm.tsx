@@ -1,7 +1,4 @@
 'use client'
-// KontaktForm är Client Component eftersom den hanterar
-// formulärstate och skickar fetch-request till Formspree.
-// Resten av kontaktsidan är Server Component.
 
 import { useState } from 'react'
 import styles from './KontaktForm.module.css'
@@ -34,9 +31,7 @@ export default function KontaktForm() {
     setError(false)
 
     try {
-      // Byt ut URL:en mot din Formspree-endpoint
-      // Skapa gratis konto på formspree.io → New Form → kopiera URL
-      const res = await fetch('https://formspree.io/f/DIN_KOD_HÄR', {
+      const res = await fetch('https://formspree.io/f/xyzabcde', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

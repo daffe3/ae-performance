@@ -1,6 +1,4 @@
 'use client'
-// Nav är en Client Component eftersom den har interaktiv state
-// (mobilmeny öppen/stängd). Allt annat renderas på servern.
 
 import { useState } from 'react'
 import Link from 'next/link'

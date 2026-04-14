@@ -1,7 +1,6 @@
-// Server Component — ingen 'use client' behövs
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from './Footer.module.css'
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
@@ -15,7 +14,9 @@ export default function Footer() {
             height={28}
             className={styles.logo}
           />
-          <p className={styles.tagline}>Mark & anläggning i Dalarna sedan 2017</p>
+          <p className={styles.tagline}>
+            Mark & anläggning i Dalarna sedan 2017
+          </p>
         </div>
 
         <nav className={styles.links}>
@@ -35,5 +36,5 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} A&E Performance AB</p>
       </div>
     </footer>
-  )
+  );
 }
