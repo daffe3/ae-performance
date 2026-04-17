@@ -56,7 +56,7 @@ export default function HomePage() {
         Begär offert
       </button>
 
-      {/* HERO — behåller den mörka bildstilen */}
+      {/* HERO  */}
       <section className={styles.hero}>
         <Image
           src="/hero.jpg"
@@ -70,25 +70,31 @@ export default function HomePage() {
         <div className={`container ${styles.heroContent}`}>
           <p className={styles.heroPre}>Falun · Dalarna</p>
           <h1 className={styles.heroTitle}>
-            Mark & anläggning<br />
+            Mark & anläggning
+            <br />
             <em>du kan lita på</em>
           </h1>
           <p className={styles.heroSub}>
-            Vi utför markarbeten, fastighetsskötsel och maskintjänster
-            med hög kvalitet och snabb kommunikation.
+            Vi utför markarbeten, fastighetsskötsel och maskintjänster med hög
+            kvalitet och snabb kommunikation.
           </p>
           <div className={styles.heroBtns}>
-            <button className={styles.btnPrimary} onClick={() => setModalOpen(true)}>
+            <button
+              className={styles.btnPrimary}
+              onClick={() => setModalOpen(true)}
+            >
               Begär offert
             </button>
-            <Link href="/tjanster" className={styles.btnGhost}>Våra tjänster</Link>
+            <Link href="/tjanster" className={styles.btnGhost}>
+              Våra tjänster
+            </Link>
           </div>
         </div>
       </section>
 
       {/* TRUST BAR */}
       <div className={styles.trustBar}>
-        {trustItems.map(item => (
+        {trustItems.map((item) => (
           <div key={item.text} className={styles.trustItem}>
             <span className={styles.check}>{item.icon}</span>
             {item.text}
@@ -96,13 +102,13 @@ export default function HomePage() {
         ))}
       </div>
 
-      {/* TJÄNSTER — kort med bildbakgrund */}
+      {/* TJÄNSTER */}
       <section className={styles.servicesSection}>
         <div className="container">
           <p className={styles.sectionLabel}>Vad vi gör</p>
           <h2 className={styles.sectionTitle}>Våra tjänster</h2>
           <div className={styles.serviceGrid}>
-            {services.map(s => (
+            {services.map((s) => (
               <div key={s.title} className={styles.serviceCard}>
                 <div className={styles.serviceImgWrap}>
                   <Image
@@ -118,7 +124,9 @@ export default function HomePage() {
                 <div className={styles.serviceBody}>
                   <p className={styles.serviceDesc}>{s.desc}</p>
                   <ul className={styles.servicePoints}>
-                    {s.points.map(p => <li key={p}>{p}</li>)}
+                    {s.points.map((p) => (
+                      <li key={p}>{p}</li>
+                    ))}
                   </ul>
                   <button
                     className={styles.serviceBtn}
@@ -138,13 +146,18 @@ export default function HomePage() {
         <div className={`container ${styles.ctaInner}`}>
           <div>
             <h2 className={styles.ctaTitle}>Redo att sätta igång?</h2>
-            <p className={styles.ctaSub}>Beskriv ditt projekt — vi återkommer med ett prisförslag.</p>
+            <p className={styles.ctaSub}>
+              Beskriv ditt projekt — vi återkommer med ett prisförslag.
+            </p>
           </div>
-          <button className={styles.btnPrimary} onClick={() => setModalOpen(true)}>
+          <button
+            className={styles.btnPrimary}
+            onClick={() => setModalOpen(true)}
+          >
             Kontakta oss
           </button>
         </div>
       </section>
     </>
-  )
+  );
 }

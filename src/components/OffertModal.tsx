@@ -22,7 +22,6 @@ export default function OffertModal({ open, onClose }: Props) {
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
 
-  // Stäng med Escape
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') onClose()
@@ -31,7 +30,6 @@ export default function OffertModal({ open, onClose }: Props) {
     return () => document.removeEventListener('keydown', onKey)
   }, [open, onClose])
 
-  // Lås scroll när modal är öppen
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -48,11 +46,11 @@ export default function OffertModal({ open, onClose }: Props) {
     e.preventDefault()
     setSending(true)
     try {
-      const res = await fetch('https://formspree.io/f/DIN_KOD_HÄR', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("https://formspree.io/f/xyzabcde", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
-      })
+      });
       if (res.ok) { setSent(true); setForm(INITIAL) }
     } finally {
       setSending(false)

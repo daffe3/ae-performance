@@ -1,5 +1,3 @@
-// Home.jsx — Startsidan (route: "/")
-
 import { Link } from '@tanstack/react-router'
 import styles from './Home.module.css'
 

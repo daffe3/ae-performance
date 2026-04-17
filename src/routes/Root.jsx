@@ -1,5 +1,3 @@
-// Root.jsx
-
 import { Outlet, Link, useRouter } from '@tanstack/react-router'
 import { useState } from 'react'
 import styles from './Root.module.css'
@@ -8,7 +6,6 @@ function Nav() {
   const [open, setOpen] = useState(false)
   const router = useRouter()
 
-  // Stäng mobilmenyn vid navigation
   const handleNav = () => setOpen(false)
 
   const links = [
@@ -105,7 +102,7 @@ export default function Root() {
   return (
     <>
       <Nav />
-      {/* Outlet = den matchade barn-routen renderas här */}
+      {/* Outlet */}
       <main>
         <Outlet />
       </main>
