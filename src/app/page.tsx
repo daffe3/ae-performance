@@ -56,7 +56,7 @@ export default function HomePage() {
         Begär offert
       </button>
 
-      {/* HERO */}
+      {/* HERO — behåller den mörka bildstilen */}
       <section className={styles.hero}>
         <Image
           src="/hero.jpg"
@@ -96,7 +96,7 @@ export default function HomePage() {
         ))}
       </div>
 
-      {/* TJÄNSTER */}
+      {/* TJÄNSTER — kort med bildbakgrund */}
       <section className={styles.servicesSection}>
         <div className="container">
           <p className={styles.sectionLabel}>Vad vi gör</p>

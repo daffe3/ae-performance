@@ -1,3 +1,10 @@
+// src/lib/data.ts
+// ─────────────────────────────────────────────────────────────
+// Central datafil — tjänster och projekt definieras här en gång
+// och importeras av de sidor som behöver dem.
+// TypeScript-typerna säkerställer att ingenting saknas.
+// ─────────────────────────────────────────────────────────────
+
 export type Service = {
   slug: string
   title: string

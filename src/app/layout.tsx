@@ -1,27 +1,38 @@
-import type { Metadata } from "next";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import "./globals.css";
+// src/app/layout.tsx
+// ─────────────────────────────────────────────────────────────
+// Next.js App Router: layout.tsx är den delade layouten för
+// ALLA sidor. Allt här renderas på servern → bra för SEO.
+//
+// metadata-objektet genererar <title> och <meta description>
+// automatiskt i <head> — ingen klientsidekod behövs.
+// ─────────────────────────────────────────────────────────────
+
+import type { Metadata } from 'next'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import './globals.css'
+
 
 export const metadata: Metadata = {
   title: {
-    default: "A&E Performance AB — Mark & Anläggning, Falun",
-    template: "%s | A&E Performance AB",
+    default: 'A&E Performance AB — Mark & Anläggning, Falun',
+    // Undersidor kan sätta title: 'Tjänster' → blir "Tjänster | A&E Performance"
+    template: '%s | A&E Performance AB',
   },
   description:
-    "Markentrepenad, fastighetsskötsel och maskintjänster i Dalarna. " +
-    "Kontakta A&E Performance AB i Falun för offert.",
+    'Markentrepenad, fastighetsskötsel och maskintjänster i Dalarna. ' +
+    'Kontakta A&E Performance AB i Falun för offert.',
   openGraph: {
-    siteName: "A&E Performance AB",
-    locale: "sv_SE",
-    type: "website",
+    siteName: 'A&E Performance AB',
+    locale: 'sv_SE',
+    type: 'website',
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="sv">
@@ -31,5 +42,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  );
+  )
 }

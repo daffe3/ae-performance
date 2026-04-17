@@ -1,6 +1,6 @@
 .header {
   padding: 80px 0 56px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid var(--border);
 }
 
 .label {
@@ -10,7 +10,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .title {
@@ -18,6 +18,7 @@
   font-size: clamp(36px, 6vw, 64px);
   font-weight: 700;
   text-transform: uppercase;
+  color: var(--text);
 }
 
 .content { padding: 80px 0; }
@@ -34,12 +35,13 @@
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
+  color: var(--text);
   margin-bottom: 20px;
 }
 
 .text p {
   font-size: 15px;
-  color: rgba(245, 243, 238, 0.75);
+  color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 18px;
   max-width: 560px;
@@ -50,14 +52,10 @@
   gap: 40px;
   margin-top: 48px;
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border);
 }
 
-.fact {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+.fact { display: flex; flex-direction: column; gap: 4px; }
 
 .factNum {
   font-family: var(--font-display);
@@ -68,13 +66,12 @@
 
 .factLabel {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .infoCard {
   background: var(--coal);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 28px;
   margin-bottom: 16px;
   position: sticky;
@@ -83,14 +80,14 @@
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--gold);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .dl {
@@ -101,7 +98,7 @@
 
 .dl dt {
   font-size: 12px;
-  color: var(--muted);
+  color: rgba(255,255,255,0.5);
   font-weight: 500;
   white-space: nowrap;
   padding-top: 2px;
@@ -109,20 +106,18 @@
 
 .dl dd {
   font-size: 14px;
-  color: var(--white);
+  color: rgba(255,255,255,0.9);
   line-height: 1.5;
 }
 
 .nightImg {
   position: relative;
   height: 220px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   overflow: hidden;
 }
 
-.nightPhoto {
-  object-fit: cover;
-}
+.nightPhoto { object-fit: cover; }
 
 .nightOverlay {
   position: absolute;
