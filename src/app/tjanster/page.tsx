@@ -1,16 +1,13 @@
-// src/app/tjanster/page.tsx
-// Server Component med egen metadata för SEO
-
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { services } from '@/lib/data'
-import styles from './page.module.css'
+import type { Metadata } from "next";
+import Link from "next/link";
+import { services } from "@/lib/data";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: 'Tjänster',
+  title: "Tjänster",
   description:
-    'Mark & grundarbeten, maskintjänster, fastighetsskötsel och fordonsaffärer i Dalarna.',
-}
+    "Mark & grundarbeten, maskintjänster, fastighetsskötsel och fordonsaffärer i Dalarna.",
+};
 
 export default function TjansterPage() {
   return (
@@ -20,8 +17,8 @@ export default function TjansterPage() {
           <p className={styles.label}>Vad vi gör</p>
           <h1 className={styles.title}>Tjänster</h1>
           <p className={styles.sub}>
-            Vi erbjuder ett brett utbud av tjänster inom mark, anläggning och fastighet.
-            Kontakta oss för offert.
+            Vi erbjuder ett brett utbud av tjänster inom mark, anläggning och
+            fastighet. Kontakta oss för offert.
           </p>
         </div>
       </section>
@@ -31,13 +28,15 @@ export default function TjansterPage() {
           {services.map((s, i) => (
             <div
               key={s.slug}
-              className={`${styles.item} ${i % 2 === 1 ? styles.itemAlt : ''}`}
+              className={`${styles.item} ${i % 2 === 1 ? styles.itemAlt : ""}`}
             >
               <div className={styles.itemText}>
                 <h2 className={styles.itemTitle}>{s.title}</h2>
                 <p className={styles.itemDesc}>{s.fullDesc}</p>
                 <ul className={styles.points}>
-                  {s.points.map(p => <li key={p}>{p}</li>)}
+                  {s.points.map((p) => (
+                    <li key={p}>{p}</li>
+                  ))}
                 </ul>
                 <Link href="/kontakt" className={styles.btn}>
                   Begär offert &#8594;
@@ -51,5 +50,5 @@ export default function TjansterPage() {
         </div>
       </section>
     </>
-  )
+  );
 }

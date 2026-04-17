@@ -1,7 +1,8 @@
 .footer {
   background: var(--coal);
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255,255,255,0.7);
   padding-top: 56px;
+  margin-top: 80px;
 }
 
 .inner {
@@ -12,16 +13,13 @@
 }
 
 .logo {
-  filter: invert(1) brightness(0.7);
-  height: 28px;
+  filter: invert(1) brightness(0.8);
+  height: 30px;
   width: auto;
   margin-bottom: 10px;
 }
 
-.tagline {
-  font-size: 13px;
-  color: var(--muted);
-}
+.tagline { font-size: 13px; }
 
 .links {
   display: flex;
@@ -31,23 +29,21 @@
 
 .links a {
   font-size: 14px;
-  color: var(--muted);
   transition: color 0.2s;
 }
-.links a:hover { color: var(--white); }
+.links a:hover { color: #fff; }
 
 .address {
   font-size: 13px;
-  color: var(--muted);
   line-height: 1.8;
   font-style: normal;
 }
 
 .bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255,255,255,0.08);
   padding: 16px 32px;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255,255,255,0.3);
   text-align: center;
 }
 

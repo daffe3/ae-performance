@@ -1,7 +1,31 @@
+/* Flytande knapp */
+.floatingBtn {
+  position: fixed;
+  right: 24px;
+  bottom: 32px;
+  z-index: 150;
+  padding: 14px 22px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(232,160,32,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: var(--font-body);
+  writing-mode: horizontal-tb;
+}
+.floatingBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(232,160,32,0.5);
+}
+
 /* HERO */
 .hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 88vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -17,9 +41,9 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(10, 10, 10, 0.96) 0%,
-    rgba(10, 10, 10, 0.45) 55%,
-    rgba(10, 10, 10, 0.1) 100%
+    rgba(10,10,10,0.96) 0%,
+    rgba(10,10,10,0.45) 55%,
+    rgba(10,10,10,0.1) 100%
   );
 }
 
@@ -27,7 +51,7 @@
   position: relative;
   z-index: 1;
   padding-bottom: 80px;
-  max-width: 700px;
+  max-width: 680px;
 }
 
 .heroPre {
@@ -37,71 +61,62 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: clamp(52px, 8vw, 88px);
+  font-size: clamp(50px, 8vw, 84px);
   font-weight: 700;
   line-height: 0.95;
   text-transform: uppercase;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 22px;
 }
-
-.heroTitle em {
-  font-style: normal;
-  color: var(--gold);
-}
+.heroTitle em { font-style: normal; color: var(--gold); }
 
 .heroSub {
   font-size: 17px;
-  color: rgba(245, 243, 238, 0.75);
+  color: rgba(255,255,255,0.72);
   max-width: 460px;
   line-height: 1.7;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
-.heroBtns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
+.heroBtns { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .btnPrimary {
   display: inline-block;
   padding: 14px 30px;
   background: var(--gold);
-  color: #0f0f0f;
+  color: #fff;
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.06em;
-  border-radius: 4px;
-  transition: opacity 0.2s;
+  font-size: 15px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  font-family: var(--font-body);
 }
-.btnPrimary:hover { opacity: 0.85; }
+.btnPrimary:hover { opacity: 0.88; transform: translateY(-1px); }
 
 .btnGhost {
   display: inline-block;
   padding: 14px 30px;
   background: transparent;
-  color: var(--white);
+  color: #fff;
   font-weight: 500;
-  font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  font-size: 15px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 50px;
   transition: border-color 0.2s, background 0.2s;
 }
-.btnGhost:hover {
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(255,255,255,0.05);
-}
+.btnGhost:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); }
 
 /* TRUST BAR */
 .trustBar {
-  background: var(--coal);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -111,31 +126,31 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  padding: 17px 30px;
+  padding: 16px 28px;
   font-size: 13px;
   font-weight: 500;
-  color: rgba(245, 243, 238, 0.65);
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--text-muted);
+  border-right: 1px solid var(--border);
 }
 .trustItem:last-child { border-right: none; }
 
 .check {
-  width: 19px;
-  height: 19px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--gold-dim);
   color: var(--gold);
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border: 1px solid var(--gold-border);
 }
 
 /* TJÄNSTER */
-.servicesSection {
-  padding: 96px 0 0;
-}
+.servicesSection { padding: 80px 0; }
 
 .sectionLabel {
   font-family: var(--font-display);
@@ -144,123 +159,149 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .sectionTitle {
   font-family: var(--font-display);
-  font-size: clamp(30px, 4vw, 44px);
+  font-size: clamp(28px, 4vw, 42px);
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 48px;
+  color: var(--text);
+  margin-bottom: 40px;
 }
 
 .serviceGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
-  background: var(--black);
+  gap: 20px;
 }
 
 .serviceCard {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.serviceCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.serviceImgWrap {
   position: relative;
-  display: block;
-  height: 380px;
+  height: 220px;
   overflow: hidden;
 }
 
 .serviceImg {
   object-fit: cover;
-  object-position: center;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
 }
-.serviceCard:hover .serviceImg {
-  transform: scale(1.05);
-}
+.serviceCard:hover .serviceImg { transform: scale(1.05); }
 
 .serviceOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.92) 0%,
-    rgba(10, 10, 10, 0.4) 50%,
-    rgba(10, 10, 10, 0.15) 100%
-  );
-  transition: background 0.3s;
-}
-.serviceCard:hover .serviceOverlay {
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.96) 0%,
-    rgba(10, 10, 10, 0.55) 55%,
-    rgba(10, 10, 10, 0.2) 100%
-  );
+  background: linear-gradient(to top, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.1) 60%);
 }
 
-.serviceText {
+.serviceImgTitle {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 32px;
+  bottom: 16px;
+  left: 20px;
+  right: 20px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.02em;
   z-index: 1;
 }
 
-.serviceTitle {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  margin-bottom: 10px;
-}
+.serviceBody { padding: 22px 24px 24px; }
 
 .serviceDesc {
   font-size: 14px;
-  color: rgba(245, 243, 238, 0.75);
-  line-height: 1.6;
+  color: var(--text-muted);
+  line-height: 1.65;
   margin-bottom: 16px;
-  max-width: 380px;
 }
 
-.serviceArrow {
-  font-size: 20px;
+.servicePoints {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.servicePoints li {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+  padding-left: 16px;
+  position: relative;
+}
+.servicePoints li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
   color: var(--gold);
-  display: inline-block;
-  transition: transform 0.2s;
+  font-size: 11px;
 }
-.serviceCard:hover .serviceArrow {
-  transform: translateX(6px);
+
+.serviceBtn {
+  background: none;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  padding: 9px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: var(--font-body);
 }
+.serviceBtn:hover { background: var(--gold); color: #fff; }
 
 /* CTA */
 .ctaSection {
-  padding: 100px 0;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  margin-top: 3px;
+  background: var(--coal);
+  padding: 64px 0;
+  margin-top: 0;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .ctaTitle {
   font-family: var(--font-display);
-  font-size: clamp(34px, 5vw, 56px);
+  font-size: clamp(28px, 4vw, 44px);
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  color: #fff;
+  margin-bottom: 8px;
 }
 
 .ctaSub {
-  font-size: 16px;
-  color: var(--muted);
-  margin-bottom: 36px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
 }
 
 @media (max-width: 700px) {
   .serviceGrid { grid-template-columns: 1fr; }
-  .serviceCard { height: 300px; }
   .trustBar { flex-direction: column; padding: 0 20px; }
-  .trustItem { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); width: 100%; }
+  .trustItem { border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
   .heroContent { padding-bottom: 52px; }
+  .ctaInner { flex-direction: column; text-align: center; }
+  .floatingBtn { right: 16px; bottom: 20px; }
 }

@@ -13,7 +13,11 @@ const links = [
   { href: '/kontakt',  label: 'Kontakt' },
 ] as const
 
-export default function Nav() {
+type NavProps = {
+  onOffertClick?: () => void
+}
+
+export default function Nav({ onOffertClick }: NavProps) {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
@@ -25,7 +29,7 @@ export default function Nav() {
             src="/logo.png"
             alt="A&E Performance"
             width={140}
-            height={34}
+            height={36}
             priority
             className={styles.logoImg}
           />
@@ -36,11 +40,7 @@ export default function Nav() {
             <Link
               key={href}
               href={href}
-              className={
-                pathname === href
-                  ? `${styles.link} ${styles.active}`
-                  : styles.link
-              }
+              className={pathname === href ? `${styles.link} ${styles.active}` : styles.link}
             >
               {label}
             </Link>
@@ -56,29 +56,18 @@ export default function Nav() {
           onClick={() => setOpen(o => !o)}
           aria-label={open ? 'Stäng meny' : 'Öppna meny'}
         >
-          <span className={open ? styles.lineTop : ''} />
-          <span className={open ? styles.lineMid : ''} />
-          <span className={open ? styles.lineBot : ''} />
+          <span /><span /><span />
         </button>
       </div>
 
       {open && (
         <div className={styles.mobile}>
           {links.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className={styles.mobileLink}
-              onClick={() => setOpen(false)}
-            >
+            <Link key={href} href={href} className={styles.mobileLink} onClick={() => setOpen(false)}>
               {label}
             </Link>
           ))}
-          <Link
-            href="/kontakt"
-            className={styles.mobileCta}
-            onClick={() => setOpen(false)}
-          >
+          <Link href="/kontakt" className={styles.mobileCta} onClick={() => setOpen(false)}>
             Begär offert
           </Link>
         </div>

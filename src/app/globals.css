@@ -8,13 +8,19 @@
 
 :root {
   --black:    #0f0f0f;
-  --coal:     #1a1a1a;
-  --steel:    #242424;
-  --muted:    rgba(245, 243, 238, 0.55);
-  --faint:    rgba(255, 255, 255, 0.06);
+  --coal: #1a1a1a;
   --gold:     #e8a020;
-  --gold-dim: rgba(232, 160, 32, 0.15);
-  --white:    #f5f3ee;
+  --gold-dim: rgba(232, 160, 32, 0.12);
+    --gold-border: rgba(232, 160, 32, 0.25);
+    --white: #ffffff;
+    --off-white: #f7f6f3;
+    --light: #f0ede8;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --border: #e5e2dc;
+    --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.13);
+    --radius: 14px;
   --font-display: 'Barlow Condensed', sans-serif;
   --font-body:    'Barlow', sans-serif;
 }
@@ -22,8 +28,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--black);
-  color: var(--white);
+  background: var(--off-white);
+    color: var(--text);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
